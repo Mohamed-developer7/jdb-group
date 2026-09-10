@@ -47,8 +47,8 @@ export function Hero() {
             className="flex items-center gap-2 sm:gap-3"
           >
             <JDBMonogram className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" color="#BFA175" />
-            <span className="font-mono text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] sm:tracking-[0.24em] text-champagne">
-              JDB Group · Honesty is the Best Policy
+            <span className="font-mono text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.18em] sm:tracking-[0.26em] text-champagne">
+              Real Estate &amp; Development Group
             </span>
           </motion.div>
 
@@ -104,6 +104,20 @@ export function Hero() {
               >
                 <span>Investment Opportunities</span>
               </Link>
+            </motion.div>
+
+            {/* Prominent World-Class Brand Slogan */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-6 sm:mt-8 flex items-center gap-3 border-t border-white/10 pt-4 sm:pt-5"
+            >
+              <JDBMonogram className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" color="#BFA175" />
+              <span className="font-display italic text-base sm:text-lg md:text-xl text-champagne tracking-wide font-normal">
+                &ldquo;Honesty is the Best Policy&rdquo;
+              </span>
+              <span className="h-px flex-1 bg-gradient-to-r from-champagne/40 to-transparent" />
             </motion.div>
           </div>
         </div>
