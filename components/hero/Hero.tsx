@@ -128,11 +128,8 @@ export function Hero() {
           </div>
 
           <div className="flex items-center justify-between gap-3 sm:gap-6 sm:justify-end">
-            <span className="sm:hidden text-slate-400 text-[8px] tracking-wider">
-              Lahore · Islamabad · Gwadar · GB · UAE · UK · China
-            </span>
-            <span className="hidden sm:inline text-slate-400 text-[9px] sm:text-[11px]">
-              Lahore · Islamabad · Gwadar · Gilgit-Baltistan · UAE · UK · China
+            <span className="text-slate-300 font-mono text-[9px] sm:text-[11px] font-medium tracking-[0.16em] uppercase">
+              PAKISTAN · UAE · UK · CHINA
             </span>
           </div>
         </div>
