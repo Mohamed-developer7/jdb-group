@@ -39,24 +39,12 @@ export function EnquiryForm({
     };
 
     try {
-      const res = await fetch("/api/enquiry", {
+      await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
-      // Always mark as sent so the user gets clean confirmation
       setStatus("sent");
-
-      // Also trigger direct mailto link as a convenient backup
-      const mailtoUrl = `mailto:jdbsays@gmail.com?subject=${encodeURIComponent(
-        `[JDB Enquiry] ${formType} — ${payload.name}`
-      )}&body=${encodeURIComponent(
-        `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone || "N/A"}\nInterest: ${payload.interest}\n\nMessage:\n${payload.message || "N/A"}`
-      )}`;
-      
-      // Open mailto quietly in background if possible
-      window.location.href = mailtoUrl;
     } catch {
       setStatus("sent");
     }

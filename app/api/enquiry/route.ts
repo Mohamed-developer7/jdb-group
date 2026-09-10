@@ -14,35 +14,46 @@ export async function POST(request: Request) {
       );
     }
 
-    // If SMTP credentials are missing, log submission gracefully and return 200 success
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.log("[enquiry-received] Inquiry logged:", {
-        formType,
-        name,
-        email,
-        phone,
-        organisation,
-        interest,
-        message,
-        timestamp: new Date().toISOString(),
+    // Always send copy via FormSubmit API directly to jdbsays@gmail.com in the background
+    try {
+      await fetch("https://formsubmit.co/ajax/jdbsays@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `[JDB Group Website] ${formType || "Enquiry"} — ${name}`,
+          _captcha: "false",
+          _template: "table",
+          Name: name,
+          Email: email,
+          Phone: phone || "N/A",
+          Organisation: organisation || "N/A",
+          Interest: interest || "N/A",
+          Message: message || "N/A",
+          FormType: formType || "General Enquiry",
+        }),
       });
-      return NextResponse.json({ success: true, method: "fallback" });
+    } catch (fsErr) {
+      console.log("[formsubmit-send] Notice:", fsErr);
     }
 
-    // Configure SMTP transport using env variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false, // TLS
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    // If custom SMTP credentials exist, send via nodemailer as well
+    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+      try {
+        const transporter = nodemailer.createTransport({
+          host: process.env.SMTP_HOST || "smtp.gmail.com",
+          port: Number(process.env.SMTP_PORT) || 587,
+          secure: false,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+          },
+        });
 
-    const subject = `[JDB Enquiry] ${formType || "General"} — ${name}`;
-
-    const html = `
+        const subject = `[JDB Enquiry] ${formType || "General"} — ${name}`;
+        const html = `
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" /><style>
@@ -87,13 +98,17 @@ export async function POST(request: Request) {
 </body>
 </html>`;
 
-    await transporter.sendMail({
-      from: `"JDB Group Website" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_EMAIL || "jdbsays@gmail.com",
-      replyTo: email,
-      subject,
-      html,
-    });
+        await transporter.sendMail({
+          from: `"JDB Group Website" <${process.env.SMTP_USER}>`,
+          to: process.env.CONTACT_EMAIL || "jdbsays@gmail.com",
+          replyTo: email,
+          subject,
+          html,
+        });
+      } catch (e) {
+        console.log("[nodemailer-send] Warning:", e);
+      }
+    }
 
     return NextResponse.json({ success: true });
   } catch (err) {
