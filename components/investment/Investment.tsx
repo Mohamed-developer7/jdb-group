@@ -88,22 +88,6 @@ export function Investment() {
             </div>
           </div>
         </div>
-
-        {/* Panoramic Architectural Visual Break */}
-        <Reveal className="relative mt-10 sm:mt-16 aspect-[16/10] sm:aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-[#E2E0D8] shadow-xl md:mt-24">
-          <Image
-            src={images.investment}
-            alt="JDB Group Institutional Architecture"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090E17]/80 via-transparent to-transparent" />
-          <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-white/90">
-            <span>Asset Governance &amp; Capital Stewardship</span>
-            <span className="text-champagne font-semibold">JDB GROUP CAPITAL</span>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

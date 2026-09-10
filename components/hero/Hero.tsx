@@ -48,7 +48,7 @@ export function Hero() {
           >
             <JDBMonogram className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" color="#BFA175" />
             <span className="font-mono text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] sm:tracking-[0.24em] text-champagne">
-              JDB Group · Real Estate &amp; Development
+              JDB Group · Honesty is the Best Policy
             </span>
           </motion.div>
 
@@ -70,7 +70,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-xs sm:text-base md:text-lg leading-relaxed text-slate-300 max-w-xl"
+              className="hidden md:block font-body text-xs sm:text-base md:text-lg leading-relaxed text-slate-300 max-w-xl"
             >
               Real estate development and strategic capital allocation shaped by
               more than fifteen years of grounded execution across Lahore, Gwadar,
@@ -129,13 +129,10 @@ export function Hero() {
 
           <div className="flex items-center justify-between gap-3 sm:gap-6 sm:justify-end">
             <span className="sm:hidden text-slate-400 text-[8px] tracking-wider">
-              Lahore · Islamabad · Gwadar · GB
+              Lahore · Islamabad · Gwadar · GB · UAE · UK · China
             </span>
             <span className="hidden sm:inline text-slate-400 text-[9px] sm:text-[11px]">
-              Lahore · Islamabad · Gwadar · Gilgit-Baltistan
-            </span>
-            <span className="hidden font-mono text-champagne/70 lg:inline">
-              31.5204° N, 74.3587° E
+              Lahore · Islamabad · Gwadar · Gilgit-Baltistan · UAE · UK · China
             </span>
           </div>
         </div>

@@ -79,8 +79,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <p className="mt-4 font-body text-sm leading-relaxed text-slate-400">
                 JDB Group maintains active land positioning and development
                 structures within this corridor. Further technical dossiers,
-                site coordinates, architectural renderings, and private
-                allocation sheets are available upon confidential registration.
+                architectural renderings, and private allocation sheets are
+                available upon confidential registration.
               </p>
 
               <div className="mt-10">

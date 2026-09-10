@@ -20,18 +20,26 @@ const heritageMilestones = [
   },
   {
     year: "2019",
-    period: "Signature Sold-Out Milestone",
-    title: "Jannat Farms — Bedian Road",
+    period: "International Exposure",
+    title: "China Real Estate & Bedian Road Delivery",
     description:
-      "Successfully developed and 100% sold out Jannat Farms adjacent to the DHA Phase 10 growth corridor in Lahore.",
+      "Expanded strategic international outreach across China real estate corridors while successfully delivering and 100% selling out Jannat Farms on Bedian Road.",
     hasBadge: false,
   },
   {
     year: "2021",
-    period: "Corridor & Global Expansion",
-    title: "Gwadar Holdings & Cross-Border Linkages",
+    period: "Cross-Border Linkages",
+    title: "CPEC International Exposure (China & Pakistan)",
     description:
-      "Acquired strategic coastal land assets in Gwadar and forged international relationships across the UAE (Misbah Properties), China, and the UK.",
+      "Capitalized on CPEC infrastructure corridors and forged cross-border relationships connecting Pakistan and China international investment networks.",
+    hasBadge: false,
+  },
+  {
+    year: "2023",
+    period: "Gulf Expansion",
+    title: "UAE Real Estate Sector Expansion",
+    description:
+      "Established strategic advisory and portfolio management presence across the UAE real estate sector.",
     hasBadge: false,
   },
   {

@@ -15,9 +15,12 @@ export function Footer() {
             </Link>
 
             <p className="mt-6 max-w-sm font-body text-xs leading-relaxed text-slate-400 sm:text-sm">
-              An international real estate development and strategic capital
-              group built on fifteen years of grounded execution, asset ownership,
-              and institutional client trust across Pakistan.
+              Guided by our foundational principle —{" "}
+              <strong className="text-champagne font-medium">
+                Honesty is the Best Policy
+              </strong>
+              . An international real estate development and strategic capital group
+              built on 15+ years of grounded execution.
             </p>
 
             {/* Heritage Notice & Direct Contact */}

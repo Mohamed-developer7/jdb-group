@@ -272,7 +272,7 @@ export function Footprint() {
             {/* Live Data Badge */}
             <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 z-10 flex items-center gap-1.5 sm:gap-2 rounded-full bg-navy-950/80 border border-white/10 px-2.5 sm:px-3 py-1 font-mono text-[8px] sm:text-[10px] uppercase tracking-widest text-slate-300 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>ACTIVE // {active.coordinates}</span>
+              <span>ACTIVE REGION // {active.region.toUpperCase()}</span>
             </div>
           </div>
 
@@ -283,7 +283,6 @@ export function Footprint() {
                 <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-champagne">
                   {active.category}
                 </span>
-                <span className="font-mono text-[10px] text-slate-400 shrink-0">{active.coordinates}</span>
               </div>
 
               <h3 className="mt-3 font-display text-2xl font-normal text-white sm:text-3xl">
